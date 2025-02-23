@@ -1,6 +1,25 @@
 <html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .bottom-image {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
 <body>
     <h1>Your Ad Here</h1>
-    <img src="channels/1000032091.png" alt="Ad Image" width="300">
+    <img class="bottom-image" src="channels/1000032091.png" alt="Ad Image" width="300">
 </body>
 </html>
