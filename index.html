@@ -1,107 +1,42 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Call Jackson</title>
+  <meta charset="utf-8">
+  <title>Birthday Surprise</title>
   <style>
-    body {
-      background: linear-gradient(135deg, #ffe6f0, #ffccff);
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
-      padding-top: 100px;
-      overflow: hidden;
-      color: #d63384;
-    }
-
     h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      animation: pulse 2s infinite;
+      font-size: 2em;
+      background: linear-gradient(
+        90deg,
+        #ff99ac,
+        #ffb347,
+        #fff176,
+        #77dd77,
+        #779ecb,
+        #9b59b6,
+        #ff6ec7
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow 8s linear infinite;
+      display: inline-block;
+      background-size: 400% 400%;
     }
 
-    button {
-      background: #ff4da6;
-      color: white;
-      font-size: 22px;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      box-shadow: 0 0 20px #ff99cc;
-      transition: transform 0.2s, background 0.3s;
-      position: relative;
-      z-index: 1;
-    }
-
-    button:hover {
-      background: #e60073;
-      transform: scale(1.05);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
-    }
-
-    .heart {
-      position: absolute;
-      font-size: 24px;
-      animation: float 2s linear forwards;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-200px) scale(1.5);
-        opacity: 0;
-      }
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
   </style>
 </head>
 <body>
-  <h2>💖 Call Jackson 💖</h2>
-  <button onclick="sendValue()">Click me to call Jackson hehe</button>
+  <h1>
+    This website is not very beautiful and only half done, because you are the missing half that makes everything complete and beautiful, without you my life is incomplete just like this website u add beauty to it
+  </h1>
 
-  <script>
-    function sendValue() {
-      // Send value to Firebase
-      fetch("https://ustt-8224a-default-rtdb.firebaseio.com/ust.json", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(1)
-      }).then(response => {
-        if (response.ok) {
-          launchHearts();
-        } else {
-          alert("Oops... call didn't go through 😢");
-        }
-      }).catch(error => {
-        console.error("Error:", error);
-        alert("Network error... Jackson is waiting 🥺");
-      });
-    }
-
-    function launchHearts() {
-      for (let i = 0; i < 10; i++) {
-        let heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.textContent = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = "60%";
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 2000);
-      }
-    }
-  </script>
+  <h2>Happy birthday ponnarameee...........</h2>
 </body>
 </html>
+
