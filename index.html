@@ -1,42 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Birthday Surprise</title>
+  <meta charset="UTF-8">
+  <title>shutdown | Know the limit.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    h2 {
-      font-size: 2em;
-      background: linear-gradient(
-        90deg,
-        #ff99ac,
-        #ffb347,
-        #fff176,
-        #77dd77,
-        #779ecb,
-        #9b59b6,
-        #ff6ec7
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-      animation: rainbow 8s linear infinite;
-      display: inline-block;
-      background-size: 400% 400%;
+    :root {
+      --bg: #070707;
+      --card: #111111;
+      --accent: #00ff66;
+      --text: #ffffff;
+      --muted-grey: #a0a0a0; /* Define the grey color */
+      --muted: #888888;
     }
 
-    @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ===== HERO SECTION ===== */
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 70px;
+
+      background-image: url("d6.png");
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.95) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem); 
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--accent); 
+      line-height: 1.1;
+      margin-bottom: 8px;
+      text-transform: lowercase;
+    }
+
+    /* UPDATED: by shutdown.tech - Grey, Bold, and Large */
+    .tagline {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--muted-grey); /* Applied Grey */
+      letter-spacing: 0.5px;
+      text-transform: lowercase;
+    }
+
+    /* ===== CONTENT SECTIONS ===== */
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid #1a1a1a;
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta button {
+      margin-top: 40px;
+      padding: 18px 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      background: var(--accent);
+      color: #000;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .cta button:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+      border-top: 1px solid #111;
+    }
+
+    footer strong {
+      text-transform: lowercase;
+    }
+
+    @media (max-width: 700px) {
+      header { padding-bottom: 50px; }
+      .hero h1 { font-size: 1.8rem; }
+      .tagline { font-size: 1.4rem; }
     }
   </style>
 </head>
-<body>
-  <h1>
-    This website is not very beautiful and only half done, because you are the missing half that makes everything complete and beautiful, without you my life is incomplete just like this website u add beauty to it
-  </h1>
 
-  <h2>Happy birthday ponnarameee...........</h2>
+<body>
+
+  <header>
+    <div class="hero">
+      <h1>Meet the Latest CPU Monitor</h1>
+      <div class="tagline">By Shutdown.tech</div>
+    </div>
+  </header>
+
+  <section>
+    <div class="features">
+      <div class="card">
+        <h3>Live Stats</h3>
+        <p>Instant CPU usage and thermal data on a custom high-contrast OLED display.</p>
+      </div>
+      <div class="card">
+        <h3>Always On</h3>
+        <p>Independent of your OS. If your screen freezes, shutdown still tracks.</p>
+      </div>
+      <div class="card">
+        <h3>Pro Alerts</h3>
+        <p>Visual warnings that trigger the moment you cross your thermal threshold.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to stay cool?</h2>
+    <p>Join the waitlist for the first limited hardware drop.</p>
+    <button>Get Early Access</button>
+  </section>
+
+  <footer>
+    &copy; 2026 <strong>shutdown</strong>. Keep it under the limit.
+  </footer>
+
 </body>
 </html>
-
